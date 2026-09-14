@@ -33,7 +33,7 @@ WORKDIR /usr/src/app
 
 # Variables de entorno por defecto en producción
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV PORT=3001
 
 # Copiar únicamente los archivos necesarios desde la etapa de compilación
 COPY --from=builder /usr/src/app/package*.json ./
@@ -44,7 +44,7 @@ COPY --from=builder /usr/src/app/dist ./dist
 USER node
 
 # Exponer el puerto configurado (3003 por defecto en Coolify)
-EXPOSE 3000
+EXPOSE 3001
 
 # Iniciar la aplicación NestJS
 CMD ["node", "dist/main.js"]
