@@ -8,6 +8,8 @@ import { databaseConfig, typeOrmAsyncConfig } from './config/database.config.js'
 import { AssetsModule } from './modules/assets/assets.module.js';
 import { SalesModule } from './modules/sales/sales.module.js';
 import { DashboardModule } from './modules/dashboard/dashboard.module.js';
+import { UsersModule } from './modules/users/users.module.js';
+import { AuthModule } from './modules/auth/auth.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -19,6 +21,8 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
       envFilePath: ['.env', '.env.local'],
     }),
     TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
+    UsersModule,
+    AuthModule,
     AssetsModule,
     SalesModule,
     DashboardModule,
@@ -34,6 +38,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
   providers: [AppService],
 })
 export class AppModule {}
+
 
 
 

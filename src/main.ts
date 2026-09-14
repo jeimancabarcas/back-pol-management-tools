@@ -28,10 +28,21 @@ async function bootstrap() {
   const swaggerConfig = new DocumentBuilder()
     .setTitle('POL Management Tools API')
     .setDescription('API REST para la gestión de herramientas, bienes y activos empresariales.')
-    .setVersion('1.0.0')
+    .addTag('Auth', 'Autenticación de usuarios, registro y OAuth 2.0 con JWT')
     .addTag('Assets', 'Gestión, consulta y registro de bienes')
     .addTag('Sales', 'Gestión, historial y registro de venta de bienes')
     .addTag('Dashboard', 'Métricas consolidadas de inventario y ventas')
+    .addBearerAuth(
+      {
+        type: 'http',
+        scheme: 'bearer',
+        bearerFormat: 'JWT',
+        name: 'JWT',
+        description: 'Ingrese su token JWT (formato Bearer <token>)',
+        in: 'header',
+      },
+      'JWT-auth',
+    )
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);
