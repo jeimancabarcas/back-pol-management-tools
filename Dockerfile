@@ -1,7 +1,7 @@
 # ==========================================
 # 1. BUILD STAGE (Compilación de la App)
 # ==========================================
-FROM node:22-alpine AS builder
+FROM node:26-alpine AS builder
 
 # Instalar herramientas para compilar módulos nativos (ej. bcrypt)
 RUN apk add --no-cache python3 make g++
@@ -27,7 +27,7 @@ RUN npm prune --omit=dev
 # ==========================================
 # 2. PRODUCTION RUNNER STAGE (Imagen Final)
 # ==========================================
-FROM node:22-alpine AS runner
+FROM node:26-alpine AS runner
 
 WORKDIR /usr/src/app
 
