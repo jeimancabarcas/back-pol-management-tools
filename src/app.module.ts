@@ -7,6 +7,7 @@ import { AppService } from './app.service.js';
 import { databaseConfig, typeOrmAsyncConfig } from './config/database.config.js';
 import { AssetsModule } from './modules/assets/assets.module.js';
 import { SalesModule } from './modules/sales/sales.module.js';
+import { DashboardModule } from './modules/dashboard/dashboard.module.js';
 
 export const { ObserveModule, ObserveInstrument } = createObserveModule();
 
@@ -20,6 +21,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
     TypeOrmModule.forRootAsync(typeOrmAsyncConfig),
     AssetsModule,
     SalesModule,
+    DashboardModule,
     // Distributed tracing, auto-correlated logs, request/job metrics, error
     // telemetry, alarms, and more — out of the box. Sign up at https://observe.nestjs.com
     ObserveModule.forRoot({
@@ -32,6 +34,7 @@ export const { ObserveModule, ObserveInstrument } = createObserveModule();
   providers: [AppService],
 })
 export class AppModule {}
+
 
 
 

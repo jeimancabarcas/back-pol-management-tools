@@ -31,6 +31,7 @@ async function bootstrap() {
     .setVersion('1.0.0')
     .addTag('Assets', 'Gestión, consulta y registro de bienes')
     .addTag('Sales', 'Gestión, historial y registro de venta de bienes')
+    .addTag('Dashboard', 'Métricas consolidadas de inventario y ventas')
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);
