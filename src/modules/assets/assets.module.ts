@@ -20,6 +20,11 @@ import { AssetController } from './infrastructure/http/controllers/asset.control
       useClass: AssetTypeOrmRepository,
     },
   ],
-  exports: [CreateAssetUseCase, GetAssetsUseCase, GetAssetByIdUseCase],
+  exports: [
+    CreateAssetUseCase,
+    GetAssetsUseCase,
+    GetAssetByIdUseCase,
+    ASSET_REPOSITORY_TOKEN,
+  ],
 })
 export class AssetsModule {}

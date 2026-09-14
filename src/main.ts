@@ -30,6 +30,7 @@ async function bootstrap() {
     .setDescription('API REST para la gestión de herramientas, bienes y activos empresariales.')
     .setVersion('1.0.0')
     .addTag('Assets', 'Gestión, consulta y registro de bienes')
+    .addTag('Sales', 'Gestión, historial y registro de venta de bienes')
     .build();
 
   const document = SwaggerModule.createDocument(app, swaggerConfig);
