@@ -33,7 +33,7 @@ WORKDIR /usr/src/app
 
 # Variables de entorno por defecto en producción
 ENV NODE_ENV=production
-ENV PORT=3000
+ENV PORT=3003
 
 # Copiar únicamente los archivos necesarios desde la etapa de compilación
 COPY --from=builder /usr/src/app/package*.json ./
@@ -43,8 +43,8 @@ COPY --from=builder /usr/src/app/dist ./dist
 # Usar usuario no privilegiado 'node' incluido en la imagen de Alpine por seguridad
 USER node
 
-# Exponer el puerto configurado (3000 por defecto en Coolify)
-EXPOSE 3000
+# Exponer el puerto configurado (3003 por defecto en Coolify)
+EXPOSE 3003
 
 # Iniciar la aplicación NestJS
 CMD ["node", "dist/main.js"]
